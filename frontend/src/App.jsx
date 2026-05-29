@@ -15,7 +15,7 @@ function App() {
 
   const startUnliker = async () => {
     try {
-      await axios.post("http://localhost:5000/start", {
+      await axios.post("https://instagram-auto-unliker-atst.onrender.com/start", {
         username,
         password,
         unlikeDelay: 1,
@@ -30,7 +30,7 @@ function App() {
 
   const stopUnliker = async () => {
     try {
-      await axios.post("http://localhost:5000/stop");
+      await axios.post("https://instagram-auto-unliker-atst.onrender.com/stop");
       setIsRunning(false);
       toast.info("Unliker stopped");
     } catch (err) {
@@ -40,7 +40,7 @@ function App() {
 
   const fetchLogs = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/logs");
+      const res = await axios.get("https://instagram-auto-unliker-atst.onrender.com/logs");
       setLogs(res.data.logs);
       setUnlikedCount(res.data.unliked_count || 0);
     } catch (err) {
